@@ -21,3 +21,24 @@ window.addEventListener("scroll", () => {
     header.classList.remove("scrolled");
   }
 });
+
+// handling the video content
+const video = document.querySelector("video");
+const videoControlButton = document.querySelector("#video-button");
+
+video.addEventListener("pause", () => {
+  videoControlButton.innerHTML = "Play";
+  console.log("video paused");
+  videoControlButton.setAttribute("onclick", "video.play()");
+});
+
+video.addEventListener("play", () => {
+  videoControlButton.innerHTML = "Pause";
+  console.log("video is playing");
+  videoControlButton.setAttribute("onclick", "video.pause()");
+});
+
+video.addEventListener("ended", () => {
+  videoControlButton.innerHTML = "Replay";
+  videoControlButton.setAttribute("onclick", "video.play()");
+});
