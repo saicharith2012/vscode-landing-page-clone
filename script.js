@@ -154,7 +154,7 @@ function changeImagesBasedOnMode(theme) {
     );
     standoutFeature3Image.setAttribute(
       "src",
-      "./assets/themes/light-mode/swimlane-customized.png"
+      "./assets/themes/light-mode/swimlane-customized-light.png"
     );
     standoutFeature4Image.setAttribute(
       "src",
