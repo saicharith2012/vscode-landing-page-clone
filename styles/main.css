@@ -61,11 +61,12 @@ body {
     Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   margin: 0px;
   background-color: var(--bg-color);
-  padding-top: 58px;
+  padding: 58px 0px 0px 0px;
 }
 
 a {
   cursor: pointer;
+  text-decoration: none;
 }
 
 main {
@@ -117,6 +118,7 @@ main {
 .main-content {
   width: 1320px;
   margin: auto;
+  box-sizing: border-box;
 }
 
 .hero-content-container {
@@ -243,21 +245,23 @@ main {
 
 .hero-video-container {
   position: relative;
-  /* padding: 0px 40px; */
+  box-sizing: border-box;
+  padding: 0px 40px;
 }
 
 .hero-video-container img {
-  width: 1240px;
   border-radius: 24px;
+  width: 100%;
 }
 
 .video-container {
   border-radius: 12px;
   position: absolute;
-  width: 90%;
-  height: 84%;
-  top: 7%;
-  left: 5%;
+  width: 85%;
+  height: 85%;
+  top: -35%;
+  left: -35%;
+  transform: translate(50%, 50%);
   overflow: hidden;
   box-shadow: 0px 2px 16px 0px var(--box-shadow-color);
 }
@@ -300,7 +304,7 @@ main {
   display: flex;
   flex-direction: row;
   gap: 48px;
-  width: 1320px;
+  width: 100%;
   box-sizing: border-box;
 }
 
@@ -309,11 +313,10 @@ main {
   flex-direction: column;
   align-items: start;
   padding: 16px;
-  width: max-content;
   border: 1px solid var(--primary-border-color);
   border-radius: 10px;
   background-color: var(--extension-tile-bg);
-  /* box-sizing: border-box; */
+  box-sizing: border-box;
 }
 
 .feature-col h2 {
@@ -372,6 +375,7 @@ main {
 .banner .description p {
   margin: 0px 0px 10px;
   font-weight: 500;
+  color: var(--banner-primary-color);
 }
 
 .banner .description button {
@@ -704,4 +708,186 @@ main {
 
 #ms-icon {
   width: 23px;
+}
+
+@media (min-width: 1400px) {
+  .main-content {
+    width: 1320px;
+  }
+}
+
+@media (max-width: 1400px) {
+  .main-content {
+    width: 1200px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .main-content {
+    width: 970px;
+  }
+
+  .cell-description {
+    display: none;
+  }
+
+  .snap {
+    width: 50%;
+  }
+
+  .extension-grid-cell {
+    justify-content: center;
+  }
+
+  .feature-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .version,
+  .get-copilot {
+    font-size: 17px;
+  }
+}
+
+@media (max-width: 992px) {
+  .hero-text h1 {
+    font-size: 40px;
+  }
+
+  .hero-text h1 br {
+    display: none;
+  }
+
+  .main-content {
+    width: 100%;
+  }
+
+  .language-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .feature-columns-container {
+    flex-direction: column;
+  }
+
+  .banner {
+    flex-direction: column;
+  }
+
+  .banner .heading {
+    padding: 0px 30px;
+  }
+  
+  .banner .heading h2 {
+    font-size: 24px;
+    line-height: 30px;
+    margin: 0px 0px 10px
+  }
+  
+  .heading h2 br {
+    display: none;
+  }
+  
+  .banner .description {
+    padding: 0px 30px;
+  }
+
+  .banner .description button {
+    font-size: 14px;
+  }
+
+  .standout-features,
+  .extensions,
+  .supported-languages {
+    flex-direction: column;
+  }
+
+  .snap {
+    width: 100%;
+  }
+
+  .extension-grid {
+    margin-top: 20px;
+  }
+
+  .feature-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 700px) {
+  .hero-text h1 br {
+    display: inline;
+  }
+}
+
+@media (max-width: 516px) {
+  .version div span,
+  .get-copilot {
+    font-size: 15px;
+  }
+
+  .download-options .version .platforms {
+    font-size: 10px;
+  }
+
+  .download-options {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .get-copilot {
+    margin: 10px 0px 0px 0px;
+  }
+
+  .rf-heading p {
+    width: 300px;
+  }
+}
+
+@media (max-width: 350px) {
+  .rf-heading p {
+    width: 200px;
+  }
+
+  .announce-container {
+    display: none;
+  }
+
+  .hero-text h1 {
+    font-size: 32px;
+  }
+
+  .language-tile .language-name {
+    font-size: 12px;
+  }
+
+  .extension-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .banner .description button {
+    font-size: 13px;
+  }
+
+
+}
+
+
+@media (max-width: 280px) {
+  .hero-text h1 {
+    font-size: 28px
+  }
+
+  .download-options .version {
+    padding: 5px 10px;
+  }
+
+  .language-tile {
+    flex-direction: column;
+  }
+
 }

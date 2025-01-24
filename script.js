@@ -57,6 +57,7 @@ const standoutFeature1Image = document.querySelector("#sf1");
 const standoutFeature2Image = document.querySelector("#sf2");
 const standoutFeature3Image = document.querySelector("#sf3");
 const standoutFeature4Image = document.querySelector("#sf4");
+const menuButtonImage = document.querySelector(".menu img");
 
 // checking localStorage if there is a existing choice for theme
 const existingTheme = localStorage.getItem("theme");
@@ -162,3 +163,20 @@ function changeImagesBasedOnMode(theme) {
     );
   }
 }
+
+// header drop down
+const menuButton = document.querySelector(".menu");
+// menuButton.setAttribute("closed", true);
+
+const headerContainer = document.querySelector(".header-container");
+
+menuButton.addEventListener("click", () => {
+  if (menuButton.getAttribute("closed") === "true") {
+    headerContainer.classList.add("expanded")
+    menuButton.setAttribute("closed", "false");
+  } 
+  else {
+    headerContainer.classList.remove("expanded");
+    menuButton.setAttribute("closed", "true");
+  }
+});
